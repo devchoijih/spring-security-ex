@@ -20,12 +20,43 @@ Spring Security의 인증(Authentication)과 인가(Authorization) 구조를 직
 
 ```text
 spring-security-ex/
- ├─ settings.gradle
- └─ src/
-     └─ main/
-         └─ java/
-             └─ com/
-                 └─ example/
-                     └─ controller/
-                         ├─ MainController.java
-                         └─ ... (요청 처리용 컨트롤러 클래스)
+├── build.gradle
+├── README.md
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/springsecurity2/
+│   │   │   ├── configuration/
+│   │   │   │   └── SecurityConfig.java          ← Spring Security 설정
+│   │   │   │
+│   │   │   ├── controller/
+│   │   │   │   ├── AccountController.java       ← 로그인 / 회원 관련 처리
+│   │   │   │   └── MainController.java          ← 메인 페이지 라우팅
+│   │   │   │
+│   │   │   ├── dto/
+│   │   │   │   ├── Account.java                 ← 사용자 계정 DTO
+│   │   │   │   └── Auth.java                    ← 인증 정보 DTO
+│   │   │   │
+│   │   │   ├── mapper/
+│   │   │   │   └── UserMapper.java              ← MyBatis 인터페이스
+│   │   │   │
+│   │   │   ├── service/
+│   │   │   │   └── AccountService.java          ← 비즈니스 로직 처리
+│   │   │   │
+│   │   │   ├── util/
+│   │   │   │   └── LoginUtil.java               ← 로그인 관련 유틸
+│   │   │   │
+│   │   │   └── Springsecurity2Application.java  ← Spring Boot 실행 진입점
+│   │   │
+│   │   └── resources/
+│   │       ├── com/example/springsecurity2/mapper/
+│   │       │   └── UserMapper.xml               ← MyBatis SQL 매핑
+│   │       │
+│   │       ├── templates/
+│   │       │   ├── join.html                    ← 회원가입 UI
+│   │       │   ├── login.html                   ← 로그인 UI
+│   │       │   └── main.html                    ← 메인 페이지
+│   │       │
+│   │       └── application.yml                  ← 애플리케이션 설정
+│   │
+│   └── test/java/com/example/springsecurity2/
+│       └── Springsecurity2ApplicationTests.java
